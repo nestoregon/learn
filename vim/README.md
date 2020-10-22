@@ -38,7 +38,7 @@ y => yank (copy)
 w => word (you can use this to go forward a word)
 b => back (as in go back a word, Ctrl+arrows does the same)
 2j => down 2 lines
-```
+``` 
 
 Once these two modes have been stablished here are a few things we can do while in **command mode**
 ```vim
