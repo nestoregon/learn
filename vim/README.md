@@ -22,7 +22,7 @@ Is the combination of both that allows us to run commands, for example ``dw`` wh
 
 Now let's try to repeat the same command. If we are to press ``.`` Vim remembers that this is our last command and will redo it. Try it deleting this word -> secondWordTobedeleted.  
 
-The next trick is to replace a word. We do that by preseing ``cw``. We can repeat this process again. put-your-own-word-here -> repeat-process-here.
+The next trick is to replace a word. We do that by pressing ``cw``. We can repeat this process again. put-your-own-word-here -> repeat-process-here.
 
 cucumber-cucumber-cucumber-cucumber-cucumber -> cucumber-cucumber-cucumber
 
@@ -37,7 +37,7 @@ y => yank (copy)
 
 ## Basic nouns
 ```vim
-w => word (you can use this to go forward a word)
+w => word (you can use this to hello forward a word)
 b => back (as in go back a word, Ctrl+arrows does the same)
 2j => down 2 lines
 ``` 
@@ -59,11 +59,21 @@ t, T => "find" the next character
 
 ## Moving through lines
 ```vim
-l => up
-k => down
+h => left arrow
+k => up
+j => down
+l => right arrow
+b => previous word
+w => next word
+gg => go to the top of the document
+V => visually select the whole line
+G => go to the bottom of the document
 ```
 
-Once these two modes have been stablished here are a few things we can do while in **command mode**
+> Change the function
+> def function:
+> 	input("estoy")
+Once these two modes have been established here are a few things we can do while in **command mode**
 ```vim
 :q # quits
 :wq # quits and saves
