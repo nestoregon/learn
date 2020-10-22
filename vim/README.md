@@ -16,6 +16,8 @@ To jump to insert press ``esc`` and to jump to insert press ``i``. Note that all
 While in command come, vim operates with two things:
 - actions
 - words
+
+Actions go first and then words.
 Is the combination of both that allows us to run commands, for example ``dw`` which stands for *delete word*. Try this on while you follow this tutorial to get the hang of it. -> Wordthatneedstobedeleted. You need to be at the beginning of the word.
 
 Now let's try to repeat the same command. If we are to press ``.`` Vim remembers that this is our last command and will redo it. Try it deleting this word -> secondWordTobedeleted.  
@@ -39,6 +41,15 @@ w => word (you can use this to go forward a word)
 b => back (as in go back a word, Ctrl+arrows does the same)
 2j => down 2 lines
 ``` 
+## Basic Text objects
+```vim
+iw => "inner word" (works from anywhere in a word)
+it => "inner tag" (the contents of HTML tag)
+i" => "inner quotes"
+ip => "inner paragraph"
+as => "a sentence"
+```
+
 
 Once these two modes have been stablished here are a few things we can do while in **command mode**
 ```vim
