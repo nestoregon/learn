@@ -50,6 +50,18 @@ ip => "inner paragraph"
 as => "a sentence"
 ```
 
+## Basic Parameterized Text Objects
+```vim
+f, F => "find" the next character
+t, T => "find" the next character
+/    => Search
+```
+
+## Moving through lines
+```vim
+l => up
+k => down
+```
 
 Once these two modes have been stablished here are a few things we can do while in **command mode**
 ```vim
