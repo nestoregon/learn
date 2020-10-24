@@ -82,4 +82,10 @@ dd # deletes a line
 / # searches a word
 ```
 
-The built in "vimtutor" is a great tutorial. Another great tutorial is "vim genius" found on the web. Basic changes.
+The built in "vimtutor" is a great tutorial.
+
+```bash
+./use_vimtutor.sh #or vimututor directly on your terminal
+```
+Another great tutorial is "vim genius" found on the web. Basic changes.
+
