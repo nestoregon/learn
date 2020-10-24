@@ -12,7 +12,7 @@ There are two major shells widely used:
 - bash
 - zsh
 
-# Bash
+## Bash
 At the beginning of each terminal session (whenever you open the terminal) a script is executed: ~/.bashrc. It's located in your home directory. This file is where we can create aliases to increase our productivity.
 
 Some simple aliases you can add at the end of your .bashrc
@@ -24,15 +24,15 @@ alias desk="mv ~/Desktop/* ." # I use this one a lot. When i download something 
 alias nau="nautilus ." # open nautilus on the current directory (ubuntu based file manager).
 ```
 
-# Zsh
+## Zsh
 Bash is the default shell for Unix and Linux. Zsh is an improvement on Bash that can handle plugins and a bunch of extra stuff. I recommended trying out bash first and once you are comfortable you can start using zsh. However, zsh is not very useful without its framework manager Oh-my-zsh
 
-## zsh installation and oh-my-zsh
+### zsh installation and oh-my-zsh
 
 ```bash
 https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH # to install zsh
 https://github.com/ohmyzsh/ohmyzsh
 ```
 
-# The plugins!
+## The plugins!
 Once we have successfully installed Oh-my-zsh we can add pluggins. 
