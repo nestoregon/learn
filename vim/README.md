@@ -24,7 +24,7 @@ Now let's try to repeat the same command. If we are to press ``.`` Vim remembers
 
 The next trick is to replace a word. We do that by pressing ``cw``. We can repeat this process again. put-your-own-word-here -> repeat-process-here.
 
-cucumber-cucumber-cucumber-cucumber-cucumber -> cucumber-cucumber-cucumber
+potato-potato-potato-potato-potato -> potato-potato-potato
 
 ## Basic actions
 ```vim
@@ -66,6 +66,7 @@ l => right arrow
 b => previous word
 w => next word
 gg => go to the top of the document
+yy => copy the whole line
 V => visually select the whole line
 G => go to the bottom of the document
 ```
