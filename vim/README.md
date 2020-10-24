@@ -89,3 +89,6 @@ The built in "vimtutor" is a great tutorial.
 Another great tutorial is "vim genius" found on the web.
 
 Another especially useful thing is to instead of pressing "esc" every time when we want to exit -- INSERT -- we can do ``ctrl+[``. This is way quicker!
+
+Useful links to see:
+https://realpython.com/vim-and-python-a-match-made-in-heaven/#syntax-checkinghighlighting
