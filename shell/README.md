@@ -24,7 +24,7 @@ alias desk="mv ~/Desktop/* ." # I use this one a lot. When i download something 
 alias nau="nautilus ." # open nautilus on the current directory (ubuntu based file manager).
 ```
 
-#Zsh
+# Zsh
 Bash is the default shell for Unix and Linux. Zsh is an improvement on Bash that can handle plugins and a bunch of extra stuff. I recommended trying out bash first and once you are comfortable you can start using zsh. However, zsh is not very useful without its framework manager Oh-my-zsh
 
 ## zsh installation and oh-my-zsh
