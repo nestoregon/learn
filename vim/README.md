@@ -22,10 +22,9 @@ Is the combination of both that allows us to run commands, for example ``dw`` wh
 
 Now let's try to repeat the same command. If we are to press ``.`` Vim remembers that this is our last command and will redo it. Try it deleting this word -> secondWordTobedeleted.  
 
-The next trick is to replace a word. We do that by pressing ``cw``. We can repeat this process again. put-your-own-word-here -> repeat-process-here.
+The next trick is to replace a word. We do that by pressing ``cw``. We can repeat this process again. Put-your-own-word-here -> repeat-process-here.
 
-potato-potato-potato-potato-potato -> potato-potato-potato
-
+Potato-potato-potato-potato-potato -> potato-potato-potato 
 ## Basic actions
 ```vim
 d => delete
@@ -87,5 +86,4 @@ The built in "vimtutor" is a great tutorial.
 ```bash
 ./use_vimtutor.sh #or vimututor directly on your terminal
 ```
-Another great tutorial is "vim genius" found on the web. Basic changes.
-
+Another great tutorial is "vim genius" found on the web.
