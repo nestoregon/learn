@@ -94,13 +94,7 @@ Useful links to see:
 https://realpython.com/vim-and-python-a-match-made-in-heaven/#syntax-checkinghighlighting
 https://vimawesome.com/plugin/markdown-syntax for markdown!.
 
-zr: reduces fold level throughout the buffer
-zR: opens all folds
-zm: increases fold level throughout the buffer
-zM: folds everything all the way
-za: open a fold your cursor is on
-zA: open a fold your cursor is on recursively
-zc: close a fold your cursor is on
-zC: close a fold your cursor is on recursively
+### Plugins
 
-
+Plugins are a great way to improve your vim experience. The one I came across is Vundle. What are useful pluggins? 
+The most useful plugin I have found is "autocorrections" for when you code. I wanted something similar to VSCode.
