@@ -98,3 +98,6 @@ https://vimawesome.com/plugin/markdown-syntax for markdown!.
 
 Plugins are a great way to improve your vim experience. The one I came across is Vundle. What are useful pluggins? 
 The most useful plugin I have found is "autocorrections" for when you code. I wanted something similar to VSCode.
+
+You can checkout the Vundle project [here](https://github.com/VundleVim/Vundle.vim)
+
