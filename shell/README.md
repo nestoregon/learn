@@ -35,4 +35,16 @@ https://github.com/ohmyzsh/ohmyzsh
 ```
 
 ## The plugins!
-Once we have successfully installed Oh-my-zsh we can add pluggins. 
+Once we have successfully installed Oh-my-zsh we can add plugins. 
+The most important plugins that I use are:
+
+- git 
+- zsh-autosuggestions 
+- zsh-syntax-highlighting
+
+Git comes with the installation. However, you need to download the previous two. Auto suggestions is very useful to run commands very quickly. For example, you type this command:
+
+```bash
+sudo apt-get install && sudo apt-get upgrade # update your machine dude!
+```
+Now manually typing everything again, if we type ``sudo`` we will see an autocomplete for the previous command. This is very useful when working with large commands. If a command is repeated very often, then add it to the ~/.zshrc as an ``alias``(see Aliases). Doing so will increase your productivity!
