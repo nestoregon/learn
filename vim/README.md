@@ -101,3 +101,7 @@ The most useful plugin I have found is "autocorrections" for when you code. I wa
 
 You can checkout the Vundle project [here](https://github.com/VundleVim/Vundle.vim)
 
+### Practicing
+
+The best way to practice is to create a file as you would normally do using vim. There you would realize what shortcuts you want to know and you can look them up. There are basic commands that we don't think we're going to use but that when you actually start coding miss. A great tool was following ``vimtutor`` and getting used to using the arrows (I still get confused sometimes especially with ``h`` and ``l``). Inserting lines above and below with ``O`` and ``o`` respectively, ``dd`` to delete a line, ``Ctrl + [`` as ``esc`` given that is more comfortable for me.   
+Overall I found that learning vim
