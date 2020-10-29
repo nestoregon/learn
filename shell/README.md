@@ -1,7 +1,7 @@
 # Learn shell scripting
 
 Wikipedia definition of Shell:
-> n computing, a shell is a command-line interpreter which exposes access to an operating system's services. In general, operating system shells use either a command-line interface (CLI) or graphical user interface (GUI), depending on a computer's role and particular operation.
+> A shell is a command-line interpreter which exposes access to an operating system's services. In general, operating system shells use either a command-line interface (CLI) or graphical user interface (GUI), depending on a computer's role and particular operation.
 
 All those technical words are complicated aren't they?
 In my opinion, the shortest explanation is this one:  
