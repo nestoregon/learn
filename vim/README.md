@@ -105,3 +105,6 @@ You can checkout the Vundle project [here](https://github.com/VundleVim/Vundle.v
 
 The best way to practice is to create a file as you would normally do using vim. There you would realize what shortcuts you want to know and you can look them up. There are basic commands that we don't think we're going to use but that when you actually start coding miss. A great tool was following ``vimtutor`` and getting used to using the arrows (I still get confused sometimes especially with ``h`` and ``l``). Inserting lines above and below with ``O`` and ``o`` respectively, ``dd`` to delete a line, ``Ctrl + [`` as ``esc`` given that is more comfortable for me.   
 Overall I found that learning vim is all about practicing. I still have a lot to learn but I believe that within 1 week I am able to comfortably edit a file as I would do in Visual Studio Code. Still, I have so much to learn, like for example how to manage different files at the same time given that that is something that I use quite often.
+
+# Journal
+- Day 3: After editing some files I realized what I am missing out compared to VSCode. For instance, when editing a file, it is very convenient to use ``cw`` to change the actual word, although you need to be at the beginning of this one. A Much better shortcut for this is ``ciw`` which deletes the whole world no
