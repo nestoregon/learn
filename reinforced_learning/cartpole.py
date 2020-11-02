@@ -11,6 +11,6 @@ for i in range(iterations): # for 1000 steps
         action = env.action_space.sample() # get a random action
         observation, reward, done, infor = env.step(action) # Action and see what the environment gets you (observation) the reward of your action, if we have achieved our goal and general information
         if done:
-            print("We're done here")
+            print("Episode finished after {} timesteps".format(t+1), "Iterations: ", i)
             break
 env.close() # close the environment
