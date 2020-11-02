@@ -1,9 +1,9 @@
 import gym # import gym library
 env = gym.make('CartPole-v0') # this is the environment, from the library
 
+iterations = int(input("What's the number of iterations?: ")
 
-
-for i in range(20): # for 1000 steps
+for i in range(iterations): # for 1000 steps
     observation= env.reset() # reset to 0 the environment
     for t in range(100):
         env.render() # render the result, in order to see the progress
