@@ -9,3 +9,8 @@ To start I recommend setting a virtual environment in python [info](https://pack
 # inside virtual environment (recommended)
 sudo pip install openai
 ```
+
+
+### 1. Cartpole
+
+In this exercise you should take a look at the comments made in the file ``cartpole.py``.
