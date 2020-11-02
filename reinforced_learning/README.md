@@ -22,3 +22,4 @@ The agents take actions into the environment. Their goal is to maximize the rega
 ### 1. Cartpole
 
 In this exercise you should take a look at the comments made in the file ``cartpole.py``.
+To follow this tutorial also refer to [this page](https://gym.openai.com/docs/) were it talks about the whole process.
