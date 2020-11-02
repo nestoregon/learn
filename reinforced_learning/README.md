@@ -19,6 +19,7 @@ The agents take actions into the environment. Their goal is to maximize the rega
 
 ![image1](photos/agent_environment.svg)
 
+**Note**. OpenAI provides only the framework to develop your reinforced learning applications. This does not mean that the algorithms are already implemented with one line of code, but the restrictions, rewards, and physics.
 ### 1. Cartpole
 
 In this exercise you should take a look at the comments made in the file ``cartpole.py``.
