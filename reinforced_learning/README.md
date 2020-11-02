@@ -5,3 +5,7 @@ In this folder you will find a small tutorial for learning reinforced learning. 
 To start I recommend setting a virtual environment in python [info](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 ### Installing
+```bash
+# inside virtual environment (recommended)
+sudo pip install openai
+```
