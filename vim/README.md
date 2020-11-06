@@ -115,3 +115,4 @@ Overall I found that learning vim is all about practicing. I still have a lot to
 - Day 8: Used Vim to write some instructions quickly but it took me more than I expected. When in --INSERT-- mode you cannot move with `hjkl`, makes sense because otherwise you would type those letters, but it is annoying to constantly change between that and -- NORMAL -- mode.
 - Day 9: Becoming more used to coding in Vim for its shortcuts. Once you get used to them they become comfortable. It is however not that comfortable to use `esc` once you want to move through lines. It is quite useful to edit some code every day to improve your coding SPEED and PRODUCTIVITY
 - Day 10: Talking with a colleague of mine, he recommended several plugins that I will try later such as: zathura, zinitplug and NERDTree
+- Day 11: I had to install a plugin for c++ syntax highlighting because the default one wasn't accurate
