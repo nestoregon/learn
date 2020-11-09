@@ -119,5 +119,5 @@ Overall I found that learning vim is all about practicing. I still have a lot to
 - Day 12: Using Vim for quick edits it's really convenient, however I don't find that it can replace VSCode for many things. I get that you can fully customize Vim, but in my opinion it's good for quick testing and fixing changes, not to develop a whole project from scratch.
 - Day 13: Getting used to certain commands such as `di"` to delete everything inside the commas. This commands are very useful when trying to edit code and replace, for example, everything inside a print. 
 ```python3
-print("Hola como estas")
+print("Hello how are you?")
 ```
