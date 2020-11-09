@@ -117,4 +117,4 @@ Overall I found that learning vim is all about practicing. I still have a lot to
 - Day 10: Talking with a colleague of mine, he recommended several plugins that I will try later such as: zathura, zinitplug and NERDTree
 - Day 11: I had to install a plugin for c++ syntax highlighting because the default one wasn't accurate
 - Day 12: Using Vim for quick edits it's really convenient, however I don't find that it can replace VSCode for many things. I get that you can fully customize Vim, but in my opinion it's good for quick testing and fixing changes, not to develop a whole project from scratch.
-- Day 13: 
+- Day 13: Getting used to certain commands such as `di"` to delete everything inside the commas.
