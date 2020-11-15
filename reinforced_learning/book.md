@@ -61,6 +61,8 @@ When we perform an ``action`` on an environment we obtain 4 things:
 - reward: What is the reward for that action
 - done: Is the situation done? This is because we have lost probably
 - extra_information: Usually called ``_`` because we don't want to use it.
+We can also ``.reset()`` the environment to start again after the simulation is done and at the beginning of each iteration.  
 There are many environments for us to play around with.  
+
 
 
