@@ -51,4 +51,16 @@ Well after all this theory I think you're ready for the next chapter.
   
 ## Chapter 2: OpenAI Gym
 
+Open AI is a platform used developing reinforcement learning algorithms.
+There are two entities:  
+- Agent
+- Environment
+These entities can ACT on the environment, receive OBSERVATIONS and REWARDS from the environment.
+When we perform an ``action`` on an environment we obtain 4 things:
+- observation: How is the environment now
+- reward: What is the reward for that action
+- done: Is the situation done? This is because we have lost probably
+- extra_information: Usually called ``_`` because we don't want to use it.
+There are many environments for us to play around with.  
+
 
