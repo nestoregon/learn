@@ -65,4 +65,3 @@ We can also ``.reset()`` the environment to start again after the simulation is 
 There are many environments for us to play around with.  
 
 
-
