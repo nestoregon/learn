@@ -88,6 +88,55 @@ Gradient meaning:
 Gradient descent meaning:
 > Gradient descent is an optimization algorithm used to minimize some function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient. In machine learning, we use gradient descent to update the parameters of our model.
 
+Now we can create a NN. What do we use? Tensors and activation funtions. The most common activation function is ``ReLU``. Google definition:
+> ReLU stands for rectified linear unit, and is a type of activation function. Mathematically, it is defined as y = max(0, x). Visually, it looks like the following: ReLU is the most commonly used activation function in neural networks, especially in CNNs
+
+![Relu](photos/relu.png)
+
+Basically Relu is the function y=x but negative values are not taken into account. The following code explains how ReLU works:
+
+```python
+def relu(x):
+    y = x
+    if x<0:
+        y = 0
+    return y
+```
+
+Building a NN. We can use the ``nn`` class in torch to build the NN. You can see the process in the following code. We use two building blocks:
+- nn.Linear to display the two layers (input and output)
+- nn.ReLU to set the activation function
+```python
+import torch
+model = torch.nn.Sequential(
+    torch.nn.Linear(4, 3),
+    torch.nn.ReLU(),
+    torch.nn.Linear(3, 4),
+)
+```
+
+The above code will generate a NN with this layout:
+![NN](photos/nn_434.png)
+
+|Layer|Number of Neurons|
+|---|:---:|
+|Input|1|
+|Hidden|4|
+|Output|4|  
+
+
+### Loss funtions
+Calculate how well the Network is doing. This is done by having an output that we can compare it with. Why is this model bad? 
+### Optimizers
+Given the loss and the current layer, how can I improve it? Common optimizers below.
+- ADAM 
+- SGD
+
+### Monitoring the progress of the training
+This is specially usegul because we need to know how the model is doing right now. The book recommends TensorBoard (which depends on tensorflow.)
+> This is the MatplotLib of ML ~ Nestor 2020
+
+
 
 
 
