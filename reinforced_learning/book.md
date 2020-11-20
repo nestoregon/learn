@@ -136,7 +136,6 @@ Given the loss and the current layer, how can I improve it? Common optimizers be
 This is specially usegul because we need to know how the model is doing right now. The book recommends TensorBoard (which depends on tensorflow.)
 > This is the MatplotLib of ML ~ Nestor 2020
 
-
-
+I tried learning tensorboard but it doesn't work with pip. You need to install Conda on Windows which is a pain. Also this book is incredibly outdated, and it's just 2 years old. Pretty crazy.
 
 
