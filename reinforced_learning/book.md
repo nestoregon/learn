@@ -64,4 +64,21 @@ When we perform an ``action`` on an environment we obtain 4 things:
 We can also ``.reset()`` the environment to start again after the simulation is done and at the beginning of each iteration.  
 There are many environments for us to play around with.  
 
+## Chapter 3: Deep Learning with PyTorch
+
+It teaches us the ML tool that we'll be used to develop our applications.
+The first important concept is a tensor. A tensor is basically a 1D, 2D, 3D array that can be used to calculate different gradients needed.
+Creation of tensors:
+```python
+import torch
+import numpy as np
+a = torch.FloatTensor(3,2) # these are the dimensions of the tensors
+```
+For example we can also create a 3 x 2 matrix using this
+```python
+a = torch.FloatTensor([1,2],[1,5],[2,9]) #3x2 matrix
+n = np.zeros(shape=(3,2))
+a = torch.tensor(n) # cast to transform from np to tensor
+```
+
 
