@@ -76,9 +76,18 @@ a = torch.FloatTensor(3,2) # these are the dimensions of the tensors
 ```
 For example we can also create a 3 x 2 matrix using this
 ```python
-a = torch.FloatTensor([1,2],[1,5],[2,9]) #3x2 matrix
+a = torch.FloatTensor([[1,2],[1,5],[2,9]]) #3x2 matrix
 n = np.zeros(shape=(3,2))
 a = torch.tensor(n) # cast to transform from np to tensor
 ```
+Watch out for the double ``[`` when creating a 2D tensor. For every dimension we put extra ``[``. Gradients are calculated when we create a NN. Why? Because we need it in order to optimize the network and change its values. 
+
+Gradient meaning:
+>Put simply, a gradient is a vector. Its components consist of the partial derivatives of a function and it points in the direction of the greatest rate of increase of the function
+
+Gradient descent meaning:
+> Gradient descent is an optimization algorithm used to minimize some function by iteratively moving in the direction of steepest descent as defined by the negative of the gradient. In machine learning, we use gradient descent to update the parameters of our model.
+
+
 
 
