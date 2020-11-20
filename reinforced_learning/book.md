@@ -138,4 +138,23 @@ This is specially usegul because we need to know how the model is doing right no
 
 I tried learning tensorboard but it doesn't work with pip. You need to install Conda on Windows which is a pain. Also this book is incredibly outdated, and it's just 2 years old. Pretty crazy.
 
+## Chapter 4: Cross Entropy
+I found this chapter to be the first really practical one. This chapter allowed my to implement my first algorithm of Reinforcement Learning.
+
+Basically it's using a regular NN for classification. 
+> What's the classification?
+
+You may ask. Well let's bring our attention to the cartpole example. In the cartpole example we have 4 inputs (observations) and 2 outputs (actions). This is what we want the NN to do. We give the NN the observations and it gets us an action. Problem is:  
+How do we train the network? There surely must be a way. We run batches of simulations and then filter out the best 30%. We train the network with those values. Then we run a bunch of simulations and do the same process. The agent has some randomness so we will get good performance out of some of them!!
+
+In steps:
+- Run 16 simulations
+- Choose best 5 of those simulations
+- Train the process with those 5
+- Repeat
+
+Pretty easy right? Those best 30% are joined together as a whole input that will be used to training the network. We don't have VALIDATION and TESTING samples.
+
+I commented every single line of ``Chapter04/nestor01.py`` so that you understand the process. I should include pictures of the setup.
+
 
