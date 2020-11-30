@@ -121,3 +121,6 @@ Overall I found that learning vim is all about practicing. I still have a lot to
 ```python3
 print("Hello how are you?")
 ```
+- Day Whatever. So by watching videos I figured out two websites that I can use to learn vim. The first one:
++ [vim cast](vimcasts.org)
++ [adventures](vim-adventures.com)
