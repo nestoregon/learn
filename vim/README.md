@@ -125,4 +125,12 @@ print("Hello how are you?")
 + [vim cast](vimcasts.org)
 + [adventures](vim-adventures.com)
 - dAY WHATEVER 2. tODAY i DOWNLOADED A CHEAT SHEET. iT PROVIDES A BUNCH OF DIFFERENT COMMANDS SO THAT i DON'T FORGET, i CAN ALSO LOOK THEM UP IN CASE i DON'T KNOW WHAT TO DO, OR WHAT TO LEarn.  
-- The above was a sick command just in case you have typed all caps. This is so brutal. I TYPED ALL CAPS HELP ME.i typed all caps help me
+- The above was a sick command just in case you have typed all caps. This is so brutal. I TYPED ALL CAPS HELP ME.i typed all caps help me. I also found useful some newly discovered commands, such as:
++ ZZ (to close and save)
++ ZQ (to close and don't save)
++ zz (line to the center of the screen)
++ zt (line to the top of the screen)
++ zb (line to the bottom of the screen)
++ Ctrl + U to go UP a little bit
++ Ctrl + D to go DOWN a little bit
++ "X, substitute X with your fav register. Do :reg to view registers. This is used when deleting, changing, yanking etc.
