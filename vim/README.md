@@ -124,3 +124,4 @@ print("Hello how are you?")
 - Day Whatever. So by watching videos I figured out two websites that I can use to learn vim. The first one:
 + [vim cast](vimcasts.org)
 + [adventures](vim-adventures.com)
+- Day whatever 2. Today I downloaded a cheat sheet. It provides a bunch of different commands so that I don't forget, I can also look them up in case I don't know what to do, or what to learn.
