@@ -126,6 +126,8 @@ print("Hello how are you?")
 + [adventures](vim-adventures.com)
 - dAY WHATEVER 2. tODAY i DOWNLOADED A CHEAT SHEET. iT PROVIDES A BUNCH OF DIFFERENT COMMANDS SO THAT i DON'T FORGET, i CAN ALSO LOOK THEM UP IN CASE i DON'T KNOW WHAT TO DO, OR WHAT TO LEarn.  
 - The above was a sick command just in case you have typed all caps. This is so brutal. I TYPED ALL CAPS HELP ME.i typed all caps help me. I also found useful some newly discovered commands, such as:
+> I was reading this and I didn't realize I didn't put the actual command for the LOL.
+The command is ``~``.
 + ZZ (to close and save)
 + ZQ (to close and don't save)
 + zz (line to the center of the screen)
