@@ -140,5 +140,6 @@ The command is ``~``.
 - I fixed the international keyboard
 ```bash
 xmodmap -e "keycode 66 = ISO_Level3_Shift"
+gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:caps_switch']"
 ```
-
+The first one is for a change that only lasts for the session and the second is permanent.
