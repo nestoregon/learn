@@ -136,4 +136,9 @@ The command is ``~``.
 + Ctrl + U to go UP a little bit
 + Ctrl + D to go DOWN a little bit
 + "X, substitute X with your fav register. Do :reg to view registers. This is used when deleting, changing, yanking etc.
-- The other day I did my first assignment using Vim. I, of course, went much slower than what I would have otherwise given that I wasn't really used to. One thing slowed me down was getting stuck in the different modes. I learned how to record a set of things (qq) and stop the recording (q). Then you can play it a number of times like (3@q) para repetirlo 3 lineas mas abajo.
+- The other day I did my first assignment using Vim. I, of course, went much slower than what I would have otherwise given that I wasn't really used to. One thing slowed me down was getting stuck in the different modes. I learned how to record a set of things (qq) and stop the recording (q). Then you can play it a number of times like (3@q) para repetirlo 3 lineas mas abajo. 
+- I fixed the international keyboard
+```bash
+xmodmap -e "keycode 66 = ISO_Level3_Shift"
+```
+
