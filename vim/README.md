@@ -144,3 +144,4 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:caps_switch']"
 gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:ralt_switch']"
 ```
 The first one is for a change that only lasts for the session and the second is permanent.
+
