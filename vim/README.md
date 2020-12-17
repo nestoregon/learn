@@ -144,4 +144,8 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:caps_switch']"
 gsettings set org.gnome.desktop.input-sources xkb-options "['lv3:ralt_switch']"
 ```
 The first one is for a change that only lasts for the session and the second is permanent.
+- Today I am doing a Jupyter Notebook class in Coursera. I have to clone the following repo in my machine:
+```
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+```
 
