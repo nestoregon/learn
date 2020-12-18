@@ -148,4 +148,8 @@ The first one is for a change that only lasts for the session and the second is 
 ```
 git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ```
-
+- I continue to work with Google Cloud services
+```
+cd ~
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+```
