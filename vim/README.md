@@ -149,3 +149,19 @@ The first one is for a change that only lasts for the session and the second is 
 git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ```
 - I continue to work with Google Cloud services
+- It has been a while since I last said something in this post.
+
+I have done a whole assignment using vim, and I have to say, I have improved quite a lot. It is not the same as before where I didn't know many things.
+Now I can code faster, the only problem is exiting with ESC. Why? because I use Ctrl + ]. The thing is that that key is really close to the p, so I tend to missclick it and paste other stuff insted. Oh well.
+I have also gotten used to setting markers and comming back to them, although the most useful thing was to copy and paste out and from vim. Super useful and it makes
+my editing that much more productive.
+
+I also used the search a lot more, given that it's very useful to go to someplace, insted of scrolling through the whole file. Also really convenient the "c", for change.
+I tend to change whole words. Another thing I noticed is that I am able to quickly.
+
+
+THINGS THAT PISS ME OFF
+1. Not hitting the Ctrl+]
+2. Miss clicks with my keyboard, where I press the wrong key and I am going elsewhere
+3. Not knowning how to know with buffers and running a file quickly, which was a very useful feature in VS code.
+
