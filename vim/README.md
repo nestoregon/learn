@@ -165,3 +165,6 @@ THINGS THAT PISS ME OFF
 2. Miss clicks with my keyboard, where I press the wrong key and I am going elsewhere
 3. Not knowning how to know with buffers and running a file quickly, which was a very useful feature in VS code.
 
+2021/01/18 Monday
+I have been using Vim for a while now. I did a whole assignment using vim and now I am more used to using it as my regular editor
+Still, there are a few things it's not design for.
