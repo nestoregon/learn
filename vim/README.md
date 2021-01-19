@@ -168,3 +168,37 @@ THINGS THAT PISS ME OFF
 2021/01/18 Monday
 I have been using Vim for a while now. I did a whole assignment using vim and now I am more used to using it as my regular editor
 Still, there are a few things it's not design for.
+
+2021/01/19 Tuesday
+Today i was using this website: https://www.freecodecamp.org/news/learn-linux-vim-basic-features-19134461ab85/
+It was quite interesting because i could learn new commands such as:
+
+```vim
+:tabe " opens a new tab
+:mksession session_name.vim " to save a setup with multiple tabs
+```
+
+```bash
+vim -S session_name.vim " the -S stands for session
+```
+
+Another useful trick I learned today was how to close the current vim session to execute a command
+and then open it again. 
+
+```vim 
+Ctrl + Z " closes the current session
+./main.py " execute command
+fg " restores everything
+```
+This is better than the old example, which is the following.
+Why is it better? Because it works with any file and because it's faster (slightly)
+The other option of using ``:!ls`` is really annoying because you need to recall
+the whole command which is annoying.
+
+```vim 
+ZZ " closes the current session
+./main.py " execute command
+vim main.py " restores everything
+```
+
+As far as recommendations it's actually ``Ctrl+n`` to see the freshest recommendation 
