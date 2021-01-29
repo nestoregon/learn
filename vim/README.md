@@ -200,5 +200,16 @@ ZZ " closes the current session
 ./main.py " execute command
 vim main.py " restores everything
 ```
-
 As far as recommendations it's actually ``Ctrl+n`` to see the freshest recommendation 
+
+2021/01/29 Friday
+I have used Vim at work and successfully coded a regression NN. I do not recommend Vim, however, for quick testing
+or jupyter notebooks. For example, VSCode has very nice pluggins, even for README's. So using Vim whenever the application requires it is the way to go
+Do not use Vim when the best solution isn't Vim.
+
+I also noticed why it's a better for other applications such as quick prototyping. I notice it when I switch and code w/o Vim. The only thing that I do not enjoy
+as much is having to have a separate terminal instead of an integrated terminal such as VSCode. This is very annoying, because you either have to have two terminals
+and you do not enjoy full screen OR you need to close the current script in order to run it. I need to figure out a solution for this, such as the one Paco has, which
+is a terminal that drops down whenever needed.
+
+
