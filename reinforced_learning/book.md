@@ -358,31 +358,3 @@ if __name__ == "__main__":
 ## Chapter 5: Bellman's equation
 
 This equations aims to provide us with 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
