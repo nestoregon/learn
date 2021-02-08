@@ -11,7 +11,7 @@ numbers.sort()
 length_num = len(numbers)
 mult = 0
 
-def find_multiplication(numbers):
+def find_multiplication_3(numbers):
     for index, number_1 in enumerate(numbers):
         for i in range(length_num-index-1):
             number_2 = numbers[i+1]
@@ -22,4 +22,4 @@ def find_multiplication(numbers):
                 print(number_1,  "*",  number_2,  "*",  number_3,"=", mult)
                 return mult
 
-find_multiplication(numbers)
+find_multiplication_3(numbers)
