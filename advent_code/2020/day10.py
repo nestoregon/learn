@@ -3,10 +3,53 @@ import sys
 from collections import namedtuple
 
 def part_1():
-    with open(input10.txt)
+
+    raw_input = []
+    with open("input10.txt") as fp:
+        for line in fp:
+            line.strip()
+            line = int(line)
+            raw_input.append(line)
+
+    raw_input.sort()
+    print(raw_input)
+    differences = {}
+    number = 0
+    # add +3 for the last one
+    raw_input.append(raw_input[-1]+3)
+
+    for i in raw_input:
+        diff = i - number
+        if diff not in differences:
+            differences[diff] = 1
+        else:
+            differences[diff] += 1
+        number = i # update
+
+    print(differences)
+
+    mult = differences[1] * differences[3]
+    print(mult)
+
 
 def part_2():
-    pass
+
+    raw_input = []
+    with open("input10.txt") as fp:
+        for line in fp:
+            line.strip()
+            line = int(line)
+            raw_input.append(line)
+
+    raw_input.sort()
+    differences = {}
+    number = 0
+    # add +3 for the last one
+    raw_input.append(raw_input[-1]+3)
+    raw_input.insert(0, 0)
+    print(raw_input)
+    valid_jumps = [1,2,3]
+
 
 
 
