@@ -50,7 +50,6 @@ def part_2():
     end_for = False
 
     for index, line in enumerate(instructions):
-        print(index)
         copy_instructions = instructions.copy()
         if line[:3] == 'jmp':
             copy_instructions[index] = copy_instructions[index].replace('jmp', 'nop')
@@ -81,8 +80,6 @@ def part_2():
                 executed.append(line)
 
             if line == len(instructions) -1:
-                print("hit")
-                print(acc)
                 answer = acc
                 end_for = True
 
