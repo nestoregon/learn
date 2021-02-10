@@ -1,62 +1,124 @@
 import os
 import sys
+from collections import namedtuple
+
+calculated_results = {}
+
+def calculate_points(bags, name):
+    total_points = 0
+    if name == "shiny gold":
+        return 1
+    if name in calculated_results:
+        return calculated_results[name]
+
+    for bag in bags:
+        # find the bag with that name
+        if bag[0] == name:
+            dictionary = bag[1]
+            if len(dictionary)==0:
+                return 0
+
+            for bag_name, value in dictionary.items():
+                total_points += value * calculate_points(bags, bag_name)
+
+    calculated_results[name] = total_points
+    return total_points
 
 def part_1():
 
-    raw_answers = []
-    unique_answers_group=[]
-    n_yes_total=0
-
-    with open("input6.txt") as fp:
-        string = ""
+    raw_rules = []
+    bags = []
+    with open("input7.txt") as fp:
         for line in fp:
             line = line.strip()
-            if line == "":
-                raw_answers.append(string)
-                string = ""
-            else:
-                string += line
-        raw_answers.append(string)
+            raw_rules.append(line)
 
-    for group in raw_answers:
-        for letter in group:
-            if letter not in unique_answers_group:
-                unique_answers_group.append(letter)
+    print(raw_rules)
+    bag_tuple = namedtuple("bag_tuple", "name contains")
+    nary = {}
+    bag = bag_tuple('this weird name', nary)
 
-        n_yes_total+=len(unique_answers_group)
-        unique_answers_group=[]
+    for rule in raw_rules:
+        container_dict = {}
+        bag_name, content = rule.split(' bags contain ')
+        content = content.split(', ')
+        for bag in content:
+            if bag == "no other bags.":
+                continue
+            words = bag.split(' ')
+            number = int(words[0])
+            name = words[1] + " " + words[2]
+            container_dict[name] = number
 
-    print("total answers:", n_yes_total)
+        bags.append(bag_tuple(bag_name, container_dict))
+
+    max = 0
+    count = 0
+    for bag in bags:
+       score = calculate_points(bags, bag[0])
+       print(bag[0], "score:", score)
+       if score > 0:
+           count += 1
+       if score > max:
+           max = score
+    print("the count is", count-1)
+
 
 def part_2():
-    groups = []
-    group = []
-    total_yes = 0
+    """ We need to count the nested bags withing 1 shinny bag """
 
-    with open("input6.txt") as fp:
-        string = ""
+    def count_bags(bags, name):
+        total_count  = 0
+
+        # just in case it was calculated before
+        # calculated results is a global variable keeping track of the best results
+        # already calculated
+        if name in calculated_results:
+            return calculated_results[name]
+
+        for bag in bags:
+            # find the bag with that name
+            if bag.name == name:
+                dictionary = bag.contains
+                if len(dictionary)==0:
+                    # this bag does not contain any other bags, so the result is just that one bag
+                    return 1
+                for bag_name, value in dictionary.items():
+                    total_count += value * count_bags(bags, bag_name) # we have to take into account the bag that we're in
+
+                total_count += 1 # don't forget to count the bag we're currently in!
+
+        calculated_results[name] = total_count
+        return total_count
+
+    raw_rules = []
+    bags = []
+    with open("input7.txt") as fp:
         for line in fp:
             line = line.strip()
-            if line == '':
-                groups.append(group)
-                group = []
-            else:
-                group.append(line)
+            raw_rules.append(line)
 
-    groups.append(group)
-    group = []
+    bag_tuple = namedtuple("bag_tuple", "name contains")
 
-    for group in groups:
-        common_letters = group[0]
-        for person in group:
-            new_common = ""
-            for letter in common_letters:
-                if letter in person:
-                    new_common += letter
-            common_letters = new_common
-        total_yes += len(common_letters)
+    for rule in raw_rules:
+        # from the raw rules create the bag_tuples and put them in an array
+        container_dict = {}
+        bag_name, content = rule.split(' bags contain ')
+        content = content.split(', ')
+        for bag in content:
+            if bag == "no other bags.":
+                continue
+            words = bag.split(' ')
+            number = int(words[0])
+            name = words[1] + " " + words[2]
+            container_dict[name] = number
 
-    print(total_yes)
+        bags.append(bag_tuple(bag_name, container_dict))
+
+    score = count_bags(bags, "shiny gold")
+    without_shiny = score -1
+    print(calculated_results)
+    print("the score is", without_shiny)
 
 
 if __name__ == "__main__":
