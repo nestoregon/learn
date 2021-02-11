@@ -80,11 +80,12 @@ def part_2():
 
     # an island that has 1 connections (X*X) can only have 1 possibilities
     # so an island that has 2 islands (X*X*X) can have (2) possibilities
-    # an island that has 3 islands (X*X*X*X) has 1, 2, 3, 4 (4)
-    # an island that has 4 islands X*X*X*X*X has (1+1+1+1) (1+1+2), (1+2+1), (2+2), (3+1), (1+3) (5)
+    # an island that has 3 islands (X*X*X*X) has (1+1+1), (1+2), (2+1), (3)
+    # an island that has 4 islands X*X*X*X*X has (1+1+1+1) (1+1+2), (1+2+1), (1+1+2),(2+2), (3+1), (1+3) (5)
 
-    match_possibilities = {1:1, 2:2, 3:4, 4:5}
+    # automatically calculate this dictionary
 
+    match_possibilities = {1:1, 2:2, 3:4, 4:7}
     mult = 1
 
     for i in islands:
