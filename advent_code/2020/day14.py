@@ -55,7 +55,7 @@ def part_2():
     memory = {}
     to_save = ""
 
-    with open("input14.txt") as fp:
+    with open("input14_1.txt") as fp:
         for line in fp:
             line = line.strip()
             words = line.split(" ")
@@ -70,20 +70,16 @@ def part_2():
                 diff = 36 - len(value_b)
                 value_b = diff*"0"+value_b
                 to_save = ""
-                default_0 = ""
 
                 for index, char in enumerate(value_b):
 
                     if mask[index] == 'X':
                         to_save+= 'X'
-                        default_0+= 'X'
 
                     elif mask[index] == '0':
                         to_save+= value_b[index]
-                        default_0+= '0'
                     else:
                         to_save+= '1'
-                        default_0+= '1'
 
                 count = 0
                 indexes = []
@@ -92,29 +88,38 @@ def part_2():
                         indexes.append(index)
                         count += 1
 
-                default_0 = to_save
+
 
 
                 all_memories = []
                 if count == 0:
                     all_memories.append(to_save)
                 else:
-                    for j in range(2^count):
+                    for j in range(2**count):
                         j = str(bin(j))
                         j = j[2:]
                         diff = len(indexes) - len(j)
+                        # make it binary with 3 things
                         j = diff*'0' + j
-                        print(j)
-                        for char in j
-                            index = indexes[index]
-                            default_0[indexes[index]] = i
-                        all_memories.append(default_0)
+
+                        save_combintations = ""
+                        index = 0
+
+                        for char in to_save:
+                            if char == "X":
+                                save_combintations += j[index]
+                                index += 1
+                            else:
+                                save_combintations+=char
+
+                        all_memories.append(save_combintations)
 
 
-                for memory_to in all_memories:
+                for index, memory_to in enumerate(all_memories):
                     # convert the binary string to int
-                    memory_to = int(to_save, 2)
-                    memory[position] = memory_to
+                    memory_to = int(memory_to, 2)
+                    memory[position+index] = memory_to
+                    print(position+index)
 
     total = 0
     for key, value in memory.items():
