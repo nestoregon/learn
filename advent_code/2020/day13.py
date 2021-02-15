@@ -1,6 +1,7 @@
 import os
 import sys
 from collections import namedtuple
+from operator import attrgetter
 
 def part_1():
     time = 0
@@ -50,7 +51,7 @@ def part_2():
     bus = namedtuple("bus", ("number delay"))
     print(bus)
 
-    with open("input13_2.txt") as fp:
+    with open("input13.txt") as fp:
         count = 0
         counter = 0
         prev_id = 0
@@ -84,10 +85,10 @@ def part_2():
     bus_times = []
     count  = 0
     for i in bus_info:
-        count += i.delay
         new_bus = bus(i.number, count)
         bus_times.append(new_bus)
         count += 1
+        count += i.delay
 
     print(bus_times)
 
@@ -95,63 +96,57 @@ def part_2():
     # calculate the times such as the next bus is one minute (or the delay is also allowed)
     # should be multiples of the first one
 
-    found = False
 
-
-    max = 0
-    max_i =0
-    for index, i in enumerate(bus_times):
-        if i.number >= max:
-            max = i.number
-            max_i = index
-    print(max)
-
-    time = 0
-    time += bus_times[max_i].number -bus_times[max_i].delay
-    final_time = 0
-
-    print(time)
-    print(max)
-
-    # earliest time
-    # number = 100_000_000_000_000
-    # division = number // time
-    # time = division * time
-    # print(time)
-
-    # cycle the biggest number, for example the place in which the biggest number and the second
-    # biggest are the same, you'll go quicker
+    # get sorted array
+    bus_times = sorted(bus_times, key=attrgetter('number'))
+    print(bus_times)
+    bus_times = (bus_times[::-1])
     print(bus_times)
 
+    found = False
+    time = 0
+    time += bus_times[0].number -bus_times[0].delay
+    final_time = 0
+
+    to_print = 10
+    # 100000000582
+    # 100000000000000
+    # 200000000000000
+
+    to_add = bus_times[0].number
+    prev = 0
+
+    pos_array = 1
+
     while not found:
-        for bus in bus_times:
-            new_time = time + bus.delay
-            number = bus.number
-            rest = new_time % number
+        # if time > to_print:
+            # to_print*= 10
+            # print(time)
 
-            if rest != 0:
+        repeats = 0
+        for bus in bus_times[1:]:
+            repeats+=1
+            if (time + bus.delay) % bus.number != 0:
                 break
+            else:
+                if pos_array == repeats:
+                    if prev == 0:
+                        prev = time
+                    else:
+                        to_add = time - prev
+                        print("to add:",to_add)
+                        prev = 0
+                        pos_array += 1
 
-            if bus_info[-1] == bus:
+
+            if bus_times[-1] == bus:
                 found = True
                 final_time = time
 
-        time += bus_times[max_i].number
+        time += to_add
+
 
     print(final_time)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
