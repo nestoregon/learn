@@ -41,12 +41,6 @@ def part_1():
     print(total)
 
 
-
-
-
-
-
-
 def part_2():
 
     mask = 0
@@ -55,7 +49,7 @@ def part_2():
     memory = {}
     to_save = ""
 
-    with open("input14_1.txt") as fp:
+    with open("input14.txt") as fp:
         for line in fp:
             line = line.strip()
             words = line.split(" ")
@@ -64,9 +58,12 @@ def part_2():
             else:
                 position = words[0]
                 position = int(position[4:-1])
+
                 value = int(words[2])
-                value_b = str(bin(value))
+
+                value_b = str(bin(position))
                 value_b = value_b[2:]
+
                 diff = 36 - len(value_b)
                 value_b = diff*"0"+value_b
                 to_save = ""
@@ -118,8 +115,8 @@ def part_2():
                 for index, memory_to in enumerate(all_memories):
                     # convert the binary string to int
                     memory_to = int(memory_to, 2)
-                    memory[position+index] = memory_to
-                    print(position+index)
+                    memory[memory_to] = value
+                    print("saving memory", memory_to, "with value", value)
 
     total = 0
     for key, value in memory.items():
