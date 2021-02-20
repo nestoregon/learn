@@ -173,7 +173,7 @@ def part_2():
     rules = []
     check_words = []
 
-    with open("input19_2.txt") as fp:
+    with open("input19_4.txt") as fp:
         what_to_append = "rules"
         for line in fp:
             line = line.strip()
