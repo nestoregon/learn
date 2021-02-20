@@ -1,6 +1,7 @@
 import os
 import sys
 from collections import namedtuple
+import random
 
 
 def node(rule, string, rules, let):
@@ -29,15 +30,31 @@ def node(rule, string, rules, let):
             return True, letters
 
     elif rule.kind == "div3":
+        solutions = {}
+
         ret, l1 = node(rules[rule.x1], string, rules, let)
         if ret == True:
-            return True, l1
-
+            solutions[1] = (True, l1)
+        # or
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
             ret, l2 = node(rules[rule.y2], string, rules, let+l1)
             if ret == True:
-                return True, l1+l2
+                solutions[2] = (True, l1+l2)
+
+        if len(solutions) == 0:
+            return False, 0
+        elif len(solutions) == 1:
+            for key, value in solutions.items():
+                return value
+        else:
+            # number = random.randint(1,2)
+            number = random.random()
+            if number < 0.5:
+                return solutions[1]
+            else:
+                return solutions[2]
+            # return solutions[number]
 
     elif rule.kind == "div4":
         ret, l1 = node(rules[rule.x1], string, rules, let)
@@ -53,11 +70,13 @@ def node(rule, string, rules, let):
                 return True, l1+l2
 
     elif rule.kind == "div5":
+        solutions = {}
+
         ret, l1 = node(rules[rule.x1], string, rules, let)
         if ret == True:
             ret, l2 = node(rules[rule.x2], string, rules, let+l1)
             if ret == True:
-                return True, l1+l2
+                solutions[2] = (True, l1+l2)
 
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
@@ -65,13 +84,35 @@ def node(rule, string, rules, let):
             if ret == True:
                 ret, l3 = node(rules[rule.extra], string, rules, let+l1+l2)
                 if ret == True:
-                    return True, l1+l2+l3
+                    solutions[1] = (True, l1+l2+l3)
+
+
+
+        if len(solutions) == 0:
+
+            return False, 0
+        elif len(solutions) == 1:
+            for key, value in solutions.items():
+                return value
+        else:
+            # number = random.randint(1,2)
+            number = random.random()
+            if number < 0.5:
+                return solutions[1]
+            else:
+                return solutions[2]
+            # return solutions[number]
+
 
 
     elif rule.kind == "leaf":
         if len(string) > let:
             if string[let] == rule.x1:
                 return True, 1
+            # else:
+                # print("--> no match", string, let, rule.x1)
+        # else:
+            # print("--> out of bounds", string, let, rule.x1)
 
     return False, 0
 
@@ -162,6 +203,8 @@ def part_1():
                 # print("false")
                 break
         print(outcome)
+
+
         if outcome == True and len(string) == 0:
             counter+=1
 
@@ -173,7 +216,7 @@ def part_2():
     rules = []
     check_words = []
 
-    with open("input19_4.txt") as fp:
+    with open("input19_2.txt") as fp:
         what_to_append = "rules"
         for line in fp:
             line = line.strip()
@@ -187,6 +230,12 @@ def part_2():
 
     print(rules)
     print(check_words)
+
+    answer = []
+    with open("input19_2.txt") as fp:
+        for line in fp:
+            line = line.strip()
+            answer.append(line)
 
     # create a dictionary for the rules
     # for example rule 0: has blablabla
@@ -251,26 +300,34 @@ def part_2():
 
     string = check_words[0]
 
-    counter = 0
-    for index, string in enumerate(check_words):
-        print("")
-        print(index, string)
-        outcome = True
-        for index2, rule in enumerate(parents):
-            # print("index:",index2, "rule",rule)
-            next_rule = rules_dict[rule]
-            ret, letters = node(next_rule, string, rules_dict, 0)
-            if ret == True:
-                string = string[letters:]
-            else:
-                outcome = False
-                # print("false")
-                break
-        print(outcome)
-        if outcome == True and len(string) == 0:
-            counter+=1
+    max = 0
+    for j in range(40):
+        counter = 0
+        for index, string in enumerate(check_words):
+            print("")
+            print(index, string)
+            original = string
+            outcome = True
+            i = 0
+            found = False
+            while i<500 and not found:
+                i += 1
+                for index2, rule in enumerate(parents):
+                    # print("index:",index2, "rule",rule)
+                    next_rule = rules_dict[rule]
+                    ret, letters = node(next_rule, string, rules_dict, 0)
+                    if ret == True:
+                        string = string[letters:]
+                    else:
+                        outcome = False
+                        break
+                if outcome == True and len(string) == 0:
+                    found = True
+                    counter+=1
+            if counter > max:
+                max = counter
 
-    print(counter)
+    print("True:",max)
 
 
 
