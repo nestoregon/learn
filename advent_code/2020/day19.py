@@ -4,6 +4,8 @@ from collections import namedtuple
 
 
 def node(rule, string, rules, let):
+    """ This function goes through the rule and sees what kind of rule it is.
+        Based on the kind of rule, we go one level deeper """
 
     # print(rule, string, let)
     if rule.kind == "nor1":
@@ -27,61 +29,50 @@ def node(rule, string, rules, let):
             return True, letters
 
     elif rule.kind == "div3":
-        # print("** x1", rule.x1)
         ret, l1 = node(rules[rule.x1], string, rules, let)
         if ret == True:
             return True, l1
 
-        # print("** y1", rule.y1)
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
-            # print("** y2", rule.y2)
             ret, l2 = node(rules[rule.y2], string, rules, let+l1)
             if ret == True:
                 return True, l1+l2
 
     elif rule.kind == "div4":
-        # print("** x1", rule.x1)
         ret, l1 = node(rules[rule.x1], string, rules, let)
         if ret == True:
-            # print("** x2", rule.x2)
             ret, l2 = node(rules[rule.x2], string, rules, let+l1)
             if ret == True:
                 return True, l1+l2
 
-        # print("** y1", rule.y1)
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
-            # print("** y2", rule.y2)
             ret, l2 = node(rules[rule.y2], string, rules, let+l1)
             if ret == True:
                 return True, l1+l2
 
     elif rule.kind == "div5":
-        # print("** x1", rule.x1)
         ret, l1 = node(rules[rule.x1], string, rules, let)
         if ret == True:
-            # print("** x2", rule.x2)
             ret, l2 = node(rules[rule.x2], string, rules, let+l1)
             if ret == True:
                 return True, l1+l2
 
-        # print("** y1", rule.y1)
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
-            # print("** y2", rule.y2)
             ret, l2 = node(rules[rule.y2], string, rules, let+l1)
             if ret == True:
                 ret, l3 = node(rules[rule.extra], string, rules, let+l1+l2)
-                if ret == True
+                if ret == True:
                     return True, l1+l2+l3
 
 
     elif rule.kind == "leaf":
-        if string[let] == rule.x1:
-            return True, 1
+        if len(string) > let:
+            if string[let] == rule.x1:
+                return True, 1
 
-    # print("returning False at", rule, string, let)
     return False, 0
 
 
@@ -252,7 +243,7 @@ def part_2():
                     x1 = all[0]
                     x2 = all[1]
 
-            rules_dict[number] = rule_node(x1,x2,y1,y2,kind)
+            rules_dict[number] = rule_node(x1,x2,y1,y2,extra,kind)
 
     for key, value in rules_dict.items():
         print(key, value)
