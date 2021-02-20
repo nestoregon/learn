@@ -36,7 +36,6 @@ def part_1():
     print(raw_rules)
     bag_tuple = namedtuple("bag_tuple", "name contains")
     nary = {}
-    bag = bag_tuple('this weird name', nary)
 
     for rule in raw_rules:
         container_dict = {}
@@ -51,6 +50,9 @@ def part_1():
             container_dict[name] = number
 
         bags.append(bag_tuple(bag_name, container_dict))
+
+    for item in bags:
+        print(item)
 
     max = 0
     count = 0
