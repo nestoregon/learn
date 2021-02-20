@@ -5,7 +5,7 @@ from collections import namedtuple
 
 def node(rule, string, rules, let):
 
-    print(rule, string, let)
+    # print(rule, string, let)
     if rule.kind == "nor1":
         ret, letters = node(rules[rule.x1], string, rules, let)
         return ret, letters
@@ -27,24 +27,28 @@ def node(rule, string, rules, let):
             return True, letters
 
     elif rule.kind == "div4":
+        # print("** x1", rule.x1)
         ret, l1 = node(rules[rule.x1], string, rules, let)
         if ret == True:
+            # print("** x2", rule.x2)
             ret, l2 = node(rules[rule.x2], string, rules, let+l1)
             if ret == True:
                 return True, l1+l2
 
+        # print("** y1", rule.y1)
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
+            # print("** y2", rule.y2)
             ret, l2 = node(rules[rule.y2], string, rules, let+l1)
             if ret == True:
                 return True, l1+l2
 
 
     elif rule.kind == "leaf":
-        if string[0] == rule.x1:
+        if string[let] == rule.x1:
             return True, 1
 
-    print("returning False at", rule, string, let)
+    # print("returning False at", rule, string, let)
     return False, 0
 
 
@@ -52,7 +56,7 @@ def part_1():
     rules = []
     check_words = []
 
-    with open("input19_1.txt") as fp:
+    with open("input19.txt") as fp:
         what_to_append = "rules"
         for line in fp:
             line = line.strip()
@@ -77,7 +81,7 @@ def part_1():
     for rule in rules:
         print(rule)
         if rule[0] == "0":
-            parents = rules[0][3:].split(" ")
+            parents = rule[3:].split(" ")
         else:
             all = rule.split(" ")
             number = all[0][:-1]
@@ -118,21 +122,28 @@ def part_1():
 
     string = check_words[0]
 
+    counter = 0
     for index, string in enumerate(check_words):
         print("")
         print(index, string)
+        outcome = True
         for index2, rule in enumerate(parents):
-            print("index:",index2, "rule",rule)
+            # print("index:",index2, "rule",rule)
             next_rule = rules_dict[rule]
             ret, letters = node(next_rule, string, rules_dict, 0)
             if ret == True:
                 string = string[letters:]
             else:
-                print("false")
+                outcome = False
+                # print("false")
                 break
+        print(outcome)
+        if outcome == True:
+            counter+=1
+
+    print(counter)
 
 
-    dict_rules = {}
 
 def part_2():
     pass
