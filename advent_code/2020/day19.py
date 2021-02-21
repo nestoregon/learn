@@ -205,6 +205,8 @@ def part_1():
 
 
 def part_2():
+    """ Part 2 was solved using probability """
+
     rules = []
     check_words = []
 
