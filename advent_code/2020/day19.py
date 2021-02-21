@@ -48,13 +48,13 @@ def node(rule, string, rules, let):
             for key, value in solutions.items():
                 return value
         else:
-            # number = random.randint(1,2)
-            number = random.random()
-            if number < 0.5:
-                return solutions[1]
-            else:
-                return solutions[2]
-            # return solutions[number]
+            number = random.randint(1,2)
+            return solutions[number]
+            # number = random.random()
+            # if number < 0.5:
+                # return solutions[1]
+            # else:
+                # return solutions[2]
 
     elif rule.kind == "div4":
         ret, l1 = node(rules[rule.x1], string, rules, let)
@@ -89,20 +89,18 @@ def node(rule, string, rules, let):
 
 
         if len(solutions) == 0:
-
             return False, 0
         elif len(solutions) == 1:
             for key, value in solutions.items():
                 return value
         else:
-            # number = random.randint(1,2)
-            number = random.random()
-            if number < 0.5:
-                return solutions[1]
-            else:
-                return solutions[2]
-            # return solutions[number]
-
+            number = random.randint(1,2)
+            return solutions[number]
+            # number = random.random()
+            # if number < 0.5:
+                # return solutions[1]
+            # else:
+                # return solutions[2]
 
 
     elif rule.kind == "leaf":
@@ -216,7 +214,7 @@ def part_2():
     rules = []
     check_words = []
 
-    with open("input19_2.txt") as fp:
+    with open("input19_4.txt") as fp:
         what_to_append = "rules"
         for line in fp:
             line = line.strip()
