@@ -49,6 +49,7 @@ def node(rule, string, rules, let):
                 return value
         else:
             number = random.randint(1,2)
+            # print("div3", number)
             return solutions[number]
             # number = random.random()
             # if number < 0.5:
@@ -76,17 +77,15 @@ def node(rule, string, rules, let):
         if ret == True:
             ret, l2 = node(rules[rule.x2], string, rules, let+l1)
             if ret == True:
-                solutions[2] = (True, l1+l2)
-
+                solutions[1] = (True, l1+l2)
+        # or
         ret, l1 = node(rules[rule.y1], string, rules, let)
         if ret == True:
             ret, l2 = node(rules[rule.y2], string, rules, let+l1)
             if ret == True:
                 ret, l3 = node(rules[rule.extra], string, rules, let+l1+l2)
                 if ret == True:
-                    solutions[1] = (True, l1+l2+l3)
-
-
+                    solutions[2] = (True, l1+l2+l3)
 
         if len(solutions) == 0:
             return False, 0
@@ -95,13 +94,8 @@ def node(rule, string, rules, let):
                 return value
         else:
             number = random.randint(1,2)
+            print("div5", number)
             return solutions[number]
-            # number = random.random()
-            # if number < 0.5:
-                # return solutions[1]
-            # else:
-                # return solutions[2]
-
 
     elif rule.kind == "leaf":
         if len(string) > let:
@@ -214,7 +208,7 @@ def part_2():
     rules = []
     check_words = []
 
-    with open("input19_4.txt") as fp:
+    with open("input19_2.txt") as fp:
         what_to_append = "rules"
         for line in fp:
             line = line.strip()
@@ -230,7 +224,7 @@ def part_2():
     print(check_words)
 
     answer = []
-    with open("input19_2.txt") as fp:
+    with open("input19_answers.txt") as fp:
         for line in fp:
             line = line.strip()
             answer.append(line)
@@ -299,19 +293,19 @@ def part_2():
     string = check_words[0]
 
     max = 0
-    for j in range(40):
+    for j in range(1):
         counter = 0
         for index, string in enumerate(check_words):
-            print("")
-            print(index, string)
             original = string
-            outcome = True
             i = 0
             found = False
-            while i<500 and not found:
+            while i<1000 and not found:
                 i += 1
+                random.seed(i)
+                string = original
+
+                outcome = True
                 for index2, rule in enumerate(parents):
-                    # print("index:",index2, "rule",rule)
                     next_rule = rules_dict[rule]
                     ret, letters = node(next_rule, string, rules_dict, 0)
                     if ret == True:
@@ -319,9 +313,14 @@ def part_2():
                     else:
                         outcome = False
                         break
+                # if outcome == True and len(string) == 0:
                 if outcome == True and len(string) == 0:
                     found = True
                     counter+=1
+            if found:
+                print(index,"True")
+            else:
+                print(index,"False")
             if counter > max:
                 max = counter
 
